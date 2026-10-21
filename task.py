@@ -2,48 +2,61 @@ import win32gui
 import win32process
 import psutil, os
 from datetime import datetime
+import time
 
+is_app_running = True
+stop_run = False
 def main():
-    app_is_running = False
     starting_time = datetime.now()
 
-    while app_is_running:
-        try:
-            active_window = win32gui.GetWindowText(win32gui.GetForegroundWindow())
-            current_time = datetime.now()
-            time_active = {
-                "starting_time": starting_time,
-                "current_time": current_time,
-                "time_spent": current_time - starting_time,
-            }
+    #when new/switching windows/process
 
-            print(
-                f"Active window: {active_window}, "
-                f"Started: {time_active['starting_time']}, "
-                f"Current: {time_active['current_time']}, "
-                f"Time active: {time_active['time_spent']}"
-            )
+    check_active_window_processid()
 
-        except Exception as e:
-            print(e)
+        
+        
+    
 
-    check_active_window()
+
+
+
+
 def check_running_apps():
     #get all the running processes
     return apps
 
-def check_active_window():
-    print("checking Current Window")
-    hwnd = win32gui.GetForegroundWindow()
-    ActiveThreadProcessId = win32process.GetWindowThreadProcessId(hwnd)
-    p = psutil.Process(ActiveThreadProcessId[1])
-    print(p.name())
-    return win32gui.GetWindowText(hwnd)
+def check_active_window_processid():
+    current_active = "" #declare so it has a base 
+    while not stop_run: #global declaration
+        try:
+            hwnd = win32gui.GetForegroundWindow()
+            tid, pid = win32process.GetWindowThreadProcessId(hwnd)
+            process_name = psutil.Process(pid)
+            
+            
+            if process_name != current_active: 
+                current_time = datetime.now()
+                applogs(win32gui.GetWindowText(hwnd), process_name.name(), current_time)
+                current_active = process_name
 
-def applogs():
+
+            time.sleep(1)
+        except KeyError as e:
+            print("Error:", e)
+
+        
+
+
+        
+
+def applogs(app_name, process_name, current_time):
     #log the active window and time spent
     return applogs
 
+
+def running(app_is_running):
+    while app_is_running:
+        current_time = datetime.now()
 
 if __name__ == "__main__":
     main()
