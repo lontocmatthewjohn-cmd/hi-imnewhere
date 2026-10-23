@@ -6,11 +6,7 @@ import time
 import ctypes
 import ctypes.wintypes as wintypes
 
-is_app_running = True
-stop_run = False
-def main():
-    print("Main")
-
+# i am using ai, but i am still writing it 
     
 EVENT_SYSTEM_FOREGROUND = 0x0003
 WINEVENT_OUTOFCONTEXT = 0x0000
@@ -29,7 +25,19 @@ WinEventProcType = ctypes.WINFUNCTYPE(
 
 # 2. Your function. Windows calls it, you never do.
 def my_callback(hWinEventHook, event, hwnd, idObject, idChild, idEventThread, dwmsEventTime):
-    print("App switch")
+    if hwnd == 0:
+        print("Error hwnd")
+    else:
+        try:
+            current_time = datetime.now()
+            app_title = win32gui.GetWindowText(hwnd)
+            _, pid = win32process.GetWindowThreadProcessId(hwnd)
+            process_name = psutil.Process(pid)
+            applogs(app_title, pid, process_name.name(), current_time)
+
+        except (psutil.NoSuchProcess, psutil.AccessDenied) as e:
+            print("Error:", e)
+
 
 # 3. Wrap it, and keep it in a variable so Python doesn't garbage-collect it
 callback = WinEventProcType(my_callback)
