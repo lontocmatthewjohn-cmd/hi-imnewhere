@@ -1,13 +1,9 @@
-import win32gui, win32api, win32con
-import win32process
-import psutil, os
+import win32gui, win32api, win32con, win32process
+import psutil, os, time, threading
 from datetime import datetime
-import time
 import ctypes
 import ctypes.wintypes as wintypes
-import threading
-# i am using claude ai for guidance, but i am still writing it. its mostly because i dont want to read the documentation so i just ask it what each function to use/do. 
-    
+
 EVENT_SYSTEM_FOREGROUND = 0x0003
 WINEVENT_OUTOFCONTEXT = 0x0000
 
@@ -23,11 +19,7 @@ WinEventProcType = ctypes.WINFUNCTYPE(
     wintypes.DWORD,   # dwmsEventTime
 )
 
-
- 
-
-    
-
+#==================================================================================================================================#
 # 2. Your function. Windows calls it, you never do.
 def my_callback(hWinEventHook, event, hwnd, idObject, idChild, idEventThread, dwmsEventTime):
     if hwnd == 0:
@@ -43,8 +35,6 @@ def my_callback(hWinEventHook, event, hwnd, idObject, idChild, idEventThread, dw
         except (psutil.NoSuchProcess, psutil.AccessDenied) as e:
             print("Error:", e)
 
-
-
 def create_currentdaylog(): #create on start of program
     day = datetime.now().date()
     global currentday 
@@ -58,9 +48,9 @@ def create_currentdaylog(): #create on start of program
 
 
 def applogs(app_title, pid, process_id, current_time):
-    exists(currentday) #doesnt return anything but if no file is found it will create instead.
+    exists(currentday)
     with open(currentday, "a", encoding="utf-8") as f:
-        f.write(f"\n\t{app_title}\t|\t{pid}\t|\t{process_id}\t|\t{current_time}") 
+        f.write(f"\n\t{app_title}\t\t\t\t\t|\t{pid}\t|\t{process_id}\t\t|\t\t{current_time}") 
 
 
 def exists(path_currentday):
@@ -70,18 +60,9 @@ def exists(path_currentday):
         print("File not found, creating a new log file...")
         create_currentdaylog
 
-
-
-
-def listen_for_quit():
-    main_thread_id = win32api.GetCurrentThreadId()
-    listener = input("Enter Q to quit")
-    if listener:
-        win32api.PostThreadMessage(main_thread_id, win32con.WM_QUIT, 0, 0)
-
-
-
-
+#========================================================================================================#
+#call 
+create_currentdaylog()
 
 
 
@@ -100,16 +81,15 @@ hook = ctypes.windll.user32.SetWinEventHook(
 
 print("Hook installed. Switch between windows...")
 
-create_currentdaylog()
+def listen_for_quit(thread_id):
+    listener = input("Enter Q to quit")
+    if listener:
+        print("Closing app")
+        win32api.PostThreadMessage(thread_id, win32con.WM_QUIT, 0, 0)
 
-threading.Thread(target=listen_for_quit, daemon=True).start()
+main_thread_id = win32api.GetCurrentThreadId()
+threading.Thread(target=listen_for_quit, args=(main_thread_id,), daemon=True).start()
 
 # 5. Wait here. Windows delivers events while this blocks.
 win32gui.PumpMessages()
-        
-
-
-
-
-
         

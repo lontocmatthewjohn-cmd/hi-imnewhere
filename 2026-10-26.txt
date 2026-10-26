@@ -1,0 +1,68 @@
+
+=========================
+Date: 2026-10-26
+	app_title	|	pid	|	process_id	|	current_time
+=========================
+Date: 2026-10-26
+	app_title	|	pid	|	process_id	|	current_time
+	New session - Claude — M — Mozilla Firefox	|	14048	|	firefox.exe	|	2026-10-26 18:16:25.887433
+		|	9416	|	explorer.exe	|	2026-10-26 18:16:27.011601
+	task.py - hi-imnewhere - Visual Studio Code	|	16928	|	Code.exe	|	2026-10-26 18:16:27.136004
+		|	9416	|	explorer.exe	|	2026-10-26 18:16:31.389417
+	New session - Claude — M — Mozilla Firefox	|	14048	|	firefox.exe	|	2026-10-26 18:16:31.498168
+	task.py - hi-imnewhere - Visual Studio Code	|	16928	|	Code.exe	|	2026-10-26 18:16:32.265899
+		|	9416	|	explorer.exe	|	2026-10-26 18:16:33.350776
+	New session - Claude — M — Mozilla Firefox	|	14048	|	firefox.exe	|	2026-10-26 18:16:33.475044
+	task.py - hi-imnewhere - Visual Studio Code	|	16928	|	Code.exe	|	2026-10-26 18:16:34.218143
+	Riot Client	|	13616	|	Riot Client.exe	|	2026-10-26 18:16:35.544693
+	task.py - hi-imnewhere - Visual Studio Code	|	16928	|	Code.exe	|	2026-10-26 18:16:36.110254
+		|	9416	|	explorer.exe	|	2026-10-26 18:16:37.169510
+	Riot Client	|	13616	|	Riot Client.exe	|	2026-10-26 18:16:37.338367
+	task.py - hi-imnewhere - Visual Studio Code	|	16928	|	Code.exe	|	2026-10-26 18:16:37.890285
+		|	9416	|	explorer.exe	|	2026-10-26 18:17:22.884119
+	Riot Client	|	13616	|	Riot Client.exe	|	2026-10-26 18:17:22.975579
+	2026-10-26.txt - hi-imnewhere - Visual Studio Code	|	16928	|	Code.exe	|	2026-10-26 18:17:23.818469
+		|	9416	|	explorer.exe	|	2026-10-26 18:17:25.506288
+	Riot Client	|	13616	|	Riot Client.exe	|	2026-10-26 18:17:25.635209
+	2026-10-26.txt - hi-imnewhere - Visual Studio Code	|	16928	|	Code.exe	|	2026-10-26 18:17:28.131660
+=========================
+Date: 2026-10-26
+	app_title	|	pid	|	process_id	|	current_time
+		|	9416	|	explorer.exe	|	2026-10-26 18:19:27.862108
+	Riot Client	|	13616	|	Riot Client.exe	|	2026-10-26 18:19:27.950413
+	task.py - hi-imnewhere - Visual Studio Code	|	16928	|	Code.exe	|	2026-10-26 18:19:29.086702
+=========================
+Date: 2026-10-26
+	app_title	|	pid	|	process_id	|	current_time
+						|	9416	|	explorer.exe	|		2026-10-26 18:24:49.268451		
+			New session - Claude — M — Mozilla Firefox			|	14048	|	firefox.exe	|		2026-10-26 18:24:49.388140		
+			task.py - hi-imnewhere - Visual Studio Code			|	16928	|	Code.exe	|		2026-10-26 18:24:50.204880		
+						|	9416	|	explorer.exe	|		2026-10-26 18:25:07.597286		
+			New session - Claude — M — Mozilla Firefox			|	14048	|	firefox.exe	|		2026-10-26 18:25:07.707127		
+			2026-10-26.txt - hi-imnewhere - Visual Studio Code			|	16928	|	Code.exe	|		2026-10-26 18:25:08.261025		
+						|	9416	|	explorer.exe	|		2026-10-26 18:25:49.875215		
+			hi-imnewhere - File Explorer			|	9416	|	explorer.exe	|		2026-10-26 18:25:49.994233		
+			2026-10-26.txt - hi-imnewhere - Visual Studio Code			|	16928	|	Code.exe	|		2026-10-26 18:25:50.618867		
+						|	9416	|	explorer.exe	|		2026-10-26 18:25:51.851680		
+			hi-imnewhere - File Explorer			|	9416	|	explorer.exe	|		2026-10-26 18:25:51.957752		
+			2026-10-26.txt - hi-imnewhere - Visual Studio Code			|	16928	|	Code.exe	|		2026-10-26 18:25:52.418311		
+						|	9416	|	explorer.exe	|		2026-10-26 18:25:54.071401		
+			New session - Claude — M — Mozilla Firefox			|	14048	|	firefox.exe	|		2026-10-26 18:25:54.188838		
+			2026-10-26.txt - hi-imnewhere - Visual Studio Code			|	16928	|	Code.exe	|		2026-10-26 18:25:54.814549		
+						|	9416	|	explorer.exe	|		2026-10-26 18:26:18.647502		
+			New session - Claude — M — Mozilla Firefox			|	14048	|	firefox.exe	|		2026-10-26 18:26:18.746281		
+						|	9416	|	explorer.exe	|		2026-10-26 18:26:19.464519		
+			2026-10-26.txt - hi-imnewhere - Visual Studio Code			|	16928	|	Code.exe	|		2026-10-26 18:26:19.584488		
+						|	9416	|	explorer.exe	|		2026-10-26 18:26:52.999101		
+			New session - Claude — M — Mozilla Firefox			|	14048	|	firefox.exe	|		2026-10-26 18:26:53.096409		
+						|	9416	|	explorer.exe	|		2026-10-26 18:26:54.096256		
+			task.py - hi-imnewhere - Visual Studio Code			|	16928	|	Code.exe	|		2026-10-26 18:26:54.213940		
+						|	9416	|	explorer.exe	|		2026-10-26 18:27:55.719084		
+			Task Switching			|	9416	|	explorer.exe	|		2026-10-26 18:27:55.743523		
+						|	9416	|	explorer.exe	|		2026-10-26 18:27:57.537465		
+			New session - Claude — M — Mozilla Firefox			|	14048	|	firefox.exe	|		2026-10-26 18:27:57.543418		
+			Task Switching			|	9416	|	explorer.exe	|		2026-10-26 18:27:57.547747		
+						|	9416	|	explorer.exe	|		2026-10-26 18:29:16.114340		
+			Task Switching			|	9416	|	explorer.exe	|		2026-10-26 18:29:16.130232		
+						|	9416	|	explorer.exe	|		2026-10-26 18:29:16.182359		
+			2026-10-26.txt - hi-imnewhere - Visual Studio Code			|	16928	|	Code.exe	|		2026-10-26 18:29:16.187398		
